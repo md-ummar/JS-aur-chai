@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>chai aur Javascript</h1>
+    <button id="stop">STOP</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    const h1Cont = document.querySelector("h1");
+    const button = document.querySelector("#stop");
+    function ChangeME() {
+      h1Cont.innerHTML = "Best course in JS";
+    }
+
+    const timeout = setTimeout(ChangeME, 2000); // this is used to settimeout for 2 sec, this goes to call then go to
+    // call back in task queue
+    button.addEventListener("click", () => {
+      clearTimeout(timeout); // to clear the setTiomeout function
+      console.log("Stopped");
+    });
+  </script>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Js with chai Document</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <ul class="language">
+      <li>Javascript</li>
+    </ul>
+  </body>
+  <script>
+    //creating element li
+    function addLi(langName) {
+      const li = document.createElement("li");
+      li.appendChild(document.createTextNode(langName));
+      document.querySelector(".language").appendChild(li);
+    }
+    addLi("golang");
+    addLi("Python");
+    //edit
+    const secondLang = document.querySelector("li:nth-child(2)");
+    const newli = document.createElement("li");
+    newli.textContent = "Mojo";
+    secondLang.replaceWith(newli);
+    addLi("golang");
+
+    //Edit
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>TypeScript</li>";
+
+    //remove
+    const lastChild = document.querySelector("li:last-child");
+    lastChild.remove();
+  </script>
+</html>
